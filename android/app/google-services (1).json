@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "544764131000",
+    "project_id": "being-b54ef",
+    "storage_bucket": "being-b54ef.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:544764131000:android:8bf79ec4628cfb3c77664d",
+        "android_client_info": {
+          "package_name": "com.example.beingsocial"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "544764131000-r5tvp8nhu8s2l54fb6v1visig3826ehu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBl8BlIFVW9LYsaqTw5-8Lt-uSlXAN2wno"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "544764131000-r5tvp8nhu8s2l54fb6v1visig3826ehu.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "544764131000-k3b8e366t6heepb90mehdbecnvs9f3s5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.beingsocial"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
