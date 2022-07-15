@@ -1,7 +1,6 @@
 import 'package:beingsocial/Pages/authentication.dart';
 import 'package:beingsocial/Pages/home.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 class Driver extends StatefulWidget {
@@ -13,10 +12,10 @@ class Driver extends StatefulWidget {
 
 class _State extends State<Driver> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
-  @override 
+  @override
   Widget build(BuildContext context) {
     return _auth.currentUser == null
-    ? const Authentication()
-      : const HomePage();
+        ? const Authentication()
+        : const HomePage();
   }
 }

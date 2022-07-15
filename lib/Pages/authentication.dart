@@ -1,8 +1,3 @@
-import 'package:beingsocial/Pages/home.dart';
-import 'package:beingsocial/forms/registerform.dart';
-import 'package:beingsocial/style/style.dart';
-import 'package:beingsocial/widgets/Loading.dart'; // might not need.
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:beingsocial/forms/loginform.dart';
 
@@ -34,16 +29,16 @@ class _AuthState extends State<Authentication> {
     //Column(children: [
     //Image.asset("images/kakao.png"),
     return Scaffold(
-        appBar: AppBar(
-          title: const Text("Authentication Basics"),
-        ),
-        body: const LoginForm()
-        /*  const LoginForm()
+      appBar: AppBar(
+        title: const Text("Authentication Basics"),
+      ),
+      body: const LoginForm(),
+      /*  const LoginForm()
             Was just this statement before, but changed to loginform.
             const RegisterForm()
             */
 
-        /* loading
+      /* loading
             ? const Loading()
             : Form(
                 key:
@@ -124,7 +119,7 @@ class _AuthState extends State<Authentication> {
                     OutlinedButton(
                         onPressed: () {}, child: Text("Forgot Password")),
                   ], */
-        );
+    );
     //   ));
     //]);
   }

@@ -1,9 +1,9 @@
+import 'package:beingsocial/Pages/conversations.dart';
 import 'package:beingsocial/Pages/profile.dart';
 import 'package:beingsocial/forms/postform.dart';
 import 'package:beingsocial/model/post.dart';
 import 'package:beingsocial/services/firestore_service.dart';
 import 'package:beingsocial/widgets/Loading.dart';
-import 'package:firebase_auth/firebase_auth.dart' as fbAuth;
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -14,7 +14,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomeState extends State<HomePage> {
-  final fbAuth.FirebaseAuth _auth = fbAuth.FirebaseAuth.instance;
   final FirestoreService _fs = FirestoreService();
 
   @override
@@ -22,13 +21,22 @@ class _HomeState extends State<HomePage> {
     return Scaffold(
         appBar: AppBar(
           title: const Text("Social Stream"),
+          actions: [
+            IconButton(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const ConversationsPage()));
+                },
+                icon: const Icon(Icons.message)),
+            IconButton(onPressed: () {}, icon: const Icon(Icons.settings))
+          ],
         ),
         floatingActionButton: FloatingActionButton(
-          onPressed: _showPostFeild,
+          onPressed: _showPostField,
           child: const Icon(Icons.post_add),
         ),
         body: StreamBuilder<List<Post>>(
-          stream: _fs.post,
+          stream: _fs.posts,
           builder: (BuildContext context, AsyncSnapshot<List<Post>> snapshots) {
             if (snapshots.hasError) {
               return Center(child: Text(snapshots.error.toString()));
@@ -78,7 +86,7 @@ class _HomeState extends State<HomePage> {
 
   //Displays a ModalPopUp that shows a text field and submit button for Post
 
-  void _showPostFeild() {
+  void _showPostField() {
     showModalBottomSheet<void>(
         context: context,
         builder: (context) {

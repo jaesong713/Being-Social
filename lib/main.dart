@@ -1,7 +1,6 @@
 import 'package:beingsocial/Pages/driver.dart';
 import 'package:beingsocial/firebase_options.dart';
-import 'package:beingsocial/forms/registerform.dart';
-import 'package:beingsocial/pages/authentication.dart';
+import 'package:beingsocial/services/firestore_service.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -11,10 +10,10 @@ This code was copied from my other file that I was following along with with the
 
 Future<void> main() async {
   //Always needed for firebase
-  // 1WidgetsFlutterBinding.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized();
   //1 if (Firebase.apps.length == 0) {
-  //1 await Firebase.initializeApp(
-  //1options: DefaultFirebaseOptions.currentPlatform);
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  FirestoreService _ = FirestoreService();
   runApp(const SocialApp());
 } //1else {}
 //await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
